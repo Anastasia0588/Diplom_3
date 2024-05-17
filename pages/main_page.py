@@ -1,6 +1,4 @@
 import allure
-from selenium.webdriver.common.by import By
-
 import urls
 from loactors.main_page_locators import MainPageLocators
 from pages.base_page import BasePage
@@ -23,6 +21,7 @@ class MainPage(BasePage):
     @allure.step('Ожидаем загрузки главной страницы')
     def wait_for_load_main_page(self):
         self.wait_for_url(urls.BASE_URL)
+        self.find_element_with_wait(MainPageLocators.INGREDIENTS_LIST)
 
     @allure.step('Нажимаем на кнопку "Лента заказов"')
     def click_feed_button(self):
@@ -99,12 +98,3 @@ class MainPage(BasePage):
     def get_order_number(self):
         element = self.find_element_with_wait(MainPageLocators.ORDER_NUMBER)
         return element.text
-
-
-
-
-
-
-
-
-
