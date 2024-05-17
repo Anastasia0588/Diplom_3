@@ -33,7 +33,7 @@ class TestResetPassword:
         assert result_url == urls.RESET_PAGE
 
     @allure.title('Проверка что клик по кнопке показать/скрыть пароль делает поле активным — подсвечивает его')
-    def test_show_password(self,driver):
+    def test_show_password(self, driver):
         forgot_page = ForgotPage(driver)
         reset_page = ResetPage(driver)
 
