@@ -1,5 +1,4 @@
 import allure
-
 import urls
 from loactors.forgot_page_locators import ForgotPageLocators
 from pages.base_page import BasePage
@@ -20,4 +19,3 @@ class ForgotPage(BasePage):
     def click_restore_button(self):
         self.find_element_with_wait(ForgotPageLocators.RESTORE_BUTTON)
         self.click_on_element(ForgotPageLocators.RESTORE_BUTTON)
-

@@ -1,5 +1,4 @@
 import allure
-
 from loactors.login_page_locators import LoginPageLocators
 from pages.base_page import BasePage
 
@@ -29,4 +28,3 @@ class LoginPage(BasePage):
     def click_constructor_button(self):
         self.find_element_with_wait(LoginPageLocators.CONSTRUCTOR_BUTTON)
         self.click_on_element(LoginPageLocators.CONSTRUCTOR_BUTTON)
-
