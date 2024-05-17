@@ -47,8 +47,3 @@ class BasePage:
         drag = WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable(source))
         drop = WebDriverWait(self.driver, 20).until(expected_conditions.element_to_be_clickable(target))
         action_chains.drag_and_drop(drag, drop).perform()
-
-
-
-
-
