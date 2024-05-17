@@ -1,7 +1,5 @@
 import random
 import string
-import allure
-import requests
 
 
 def generate_random_string(length):
