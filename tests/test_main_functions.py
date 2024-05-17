@@ -69,13 +69,10 @@ class TestMainFunctions:
         assert count == expected_count
 
     @allure.title('Проверка, что залогиненный пользователь может оформить заказ')
-    def test_create_order_by_authorized_user(self, driver, user):
+    def test_create_order_by_authorized_user(self, driver, authorize_user):
         main_page = MainPage(driver)
-        login_page = LoginPage(driver)
 
         driver.get(urls.LOGIN_PAGE)
-        login_page.fill_user_data_form(user['email'], user['password'])
-        login_page.click_constructor_button()
         main_page.wait_for_load_main_page()
         ingredient = main_page.choose_ingredient()
         main_page.add_ingredient(ingredient)
@@ -83,14 +80,3 @@ class TestMainFunctions:
         element = main_page.find_order_modal()
 
         assert element
-
-
-
-
-
-
-
-
-
-
-
